@@ -37,7 +37,7 @@
     constructor(game) {
       this.game = game;
       this.panels = [];
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < ; i++) {
         this.panels.push(new Panel(this.game));
       }
       this.setup();
@@ -61,7 +61,8 @@
   }
 
   class Game {
-    constructor() {
+    constructor(level) {
+      this.level = level;
       this.board = new Board(this);
       
       this.currentNum = undefined;
@@ -106,7 +107,11 @@
     getTimeoutId() {
       return this.timeoutId;
     }
+
+    getKevel() {
+      return this.level;
+    }
   }
 
-  new Game();
+  new Game(2);
 }
